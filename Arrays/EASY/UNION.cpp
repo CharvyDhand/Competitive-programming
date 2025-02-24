@@ -5,7 +5,7 @@
 using namespace std;
 //optimal solution
 //time complexity= o(n+m)
-//space=o(n+m)   //to return the value 
+//space=o(n+m)   //to return the value
 vector<int> optimal(vector<int> a, vector<int> b){
     vector<int> uniona;
     int i=0;
