@@ -20,7 +20,9 @@ int main(){
             break;
         }
     }
-    if(j==-1){return a;}
+    if(j==-1){
+        return 0;
+     }
     for(int i=j+1;i<n;i++){
         if(a[i]!=0){
             int temp=a[i];
