@@ -1,12 +1,12 @@
 #include<iostream>
 #include<vector>
+#include<bits/stdc++.h>
 using namespace std;
-
 void sortArray(vector<int>& a, int n){
     int low=0,mid=0;
     int high=n-1;
     while(mid<=high){
-        if(a[mid]==0 && mid!=low){
+        if(a[mid]==0 ){
             swap(a[mid],a[low]);
             mid++;
             low++;
