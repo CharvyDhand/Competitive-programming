@@ -3,8 +3,41 @@
 #include<set>
 #include<bits/stdc++.h>
 using namespace std;
-//brute '/p aq-/*-+*9.
-// ,m bncvx67ty~ o(n^3)
+int longestSubarrayWithSumK(vector<int> a, long long k) {
+    int n = a.size();
+    int left = 0, right = 0; 
+    long long sum = a[0];
+    int maxLen = 0;
+    while (right < n) {
+        while (left <= right && sum > k) {
+            sum -= a[left];
+            left++;
+        }
+         if (sum == k) {
+            maxLen = max(maxLen, right - left + 1);
+        }
+        right++;
+        if (right < n)
+            sum += a[right];
+    }
+    return maxLen;
+}
+//brute with o(n^2)
+int longestSubarrayWithSumK(vector<int> a, long long k) {
+    int n=a.size();
+    int length=0;
+     for(int i=0;i<n;i++){
+          long long s=0;
+        for(int j=i;j<n;j++){
+                s+=a[j];
+                if(s==k){
+                    length=max(length,j-i+1);
+                }
+        }
+     }
+     return length;
+}
+//brute with o(n^3)
 // int longestSubarrayWithSumK(vector<int> a, long long k) {
 //     int n=a.size();
 //     int length=0;
