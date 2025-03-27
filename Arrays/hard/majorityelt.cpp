@@ -19,6 +19,22 @@ vector<int> majorityElement(vector<int> v) {
 	sort(ans.begin(),ans.end());
 	return ans;
 }
+vector<int> majorityElement1(vector<int>& nums) {
+	unordered_map<int,int> mpp;
+	int temp=(nums.size()/3)+1;
+	vector<int> ans;
+	for(int i=0;i<nums.size();i++){
+		mpp[nums[i]]++;
+		if(mpp[nums[i]]==temp){
+			ans.push_back(nums[i]);
+		}
+		if(ans.size()==2){
+			return ans;
+		}
+	}
+	return ans;
+
+}
 int main(){
     vector<int> arr={1,2,3,4,1,2,5};
     vector<int> ans=majorityElement(arr);
