@@ -19,5 +19,4 @@ int startStation(vector<int> &gas, vector<int> &cost) {
       return (totalgas >= totalcost) ? sp : -1;
 }
 int main(){
-    
 }
